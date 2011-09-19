@@ -1,5 +1,4 @@
 <%= content_tag_for(:li, feeding) do %>
-  <p><%= feeding.body %></p>
   <span class="age">Posted at <%= time_ago_in_words(feeding.created_at) %> ago.
   (<%= link_to 'Delete', feeding, :confirm => 'Are you sure?', :method => :delete, :remote => true %>)</span>
 <% end %>
