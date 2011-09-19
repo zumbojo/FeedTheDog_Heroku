@@ -20,14 +20,4 @@ class FeedingsController < ApplicationController
       end
     end
   end
-
-  def destroy
-    @feeding = Post.find(params[:id])
-    @feeding.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(feedings_url) }
-      format.js
-    end
-  end
 end
