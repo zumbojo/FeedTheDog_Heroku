@@ -1,0 +1,9 @@
+<h1>Posts</h1>
+
+<div id="post_form">
+  <%= render 'form' %>
+</div>
+
+<ul id="posts">
+  <%= render :partial => @posts.reverse %>
+</ul>
