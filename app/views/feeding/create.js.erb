@@ -1,3 +1,3 @@
-$('#posts').prepend('<%= escape_javascript(render(@post)) %>');
-$('#posts > li:first').effect('highlight', {}, 3000);
-$('#post_form > form')[0].reset();
+$('#feedings').prepend('<%= escape_javascript(render(@feeding)) %>');
+$('#feedings > li:first').effect('highlight', {}, 3000);
+$('#feeding_form > form')[0].reset();
