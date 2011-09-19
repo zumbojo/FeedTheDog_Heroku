@@ -1,5 +1,6 @@
 FeedTheDogHeroku::Application.routes.draw do
-  resources :feedings # temporary; todo: replace with root route
+  root :to => 'feedings#index'
+  resources :feedings
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
