@@ -15,7 +15,7 @@ class FeedingsController < ApplicationController
     @feeding = Feeding.new(params[:post])
 
     respond_to do |format|
-      if @feeding.save
+      if activate_feeder && @feeding.save
         format.html { redirect_to(feedings_url, :notice => 'Feeding was successfully created.') }
         format.js
       else
