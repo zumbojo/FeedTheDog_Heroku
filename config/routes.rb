@@ -2,6 +2,8 @@ FeedTheDogHeroku::Application.routes.draw do
   root :to => 'feedings#index'
   resources :feedings
 
+  get "test_feeder", :controller => 'feedings', :action => 'test_feeder' # for testing; todo: remove
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

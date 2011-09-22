@@ -29,6 +29,13 @@ class FeedingsController < ApplicationController
 
     def activate_feeder
       # get environment variables
+      @feeder_url = ENV['FEEDER_URL']
+      @feeder_private_key = ENV['FEEDER_PRIVATE_KEY']
+
+      @feeder_url + @feeder_private_key
+
+
+      # Net::HTTP.get_response(uri)
       # get nonce from feeder
       # sign nonce
       # post nonce back to feeder
