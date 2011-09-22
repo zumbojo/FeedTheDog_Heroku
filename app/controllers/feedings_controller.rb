@@ -1,3 +1,6 @@
+require "uri"
+require "net/http"
+
 class FeedingsController < ApplicationController
   def index
     @feedings = Feeding.all
@@ -32,11 +35,14 @@ class FeedingsController < ApplicationController
       @feeder_url = ENV['FEEDER_URL']
       @feeder_private_key = ENV['FEEDER_PRIVATE_KEY']
 
-      @feeder_url + @feeder_private_key
+      @feeder_create_nonces_url = @feeder_url + '/nonces/create'
 
-
-      # Net::HTTP.get_response(uri)
       # get nonce from feeder
+      @unsigned_nonce = Net::HTTP.get_response(URI.parse(@feeder_create_nonces_url))
+      @unsigned_nonce.body
+
+      # @signed_nonce = Digest::SHA2.hexdigest(@unsigned_nonce + @feeder_private_key)
+
       # sign nonce
       # post nonce back to feeder
     end
