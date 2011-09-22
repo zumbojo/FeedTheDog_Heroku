@@ -35,8 +35,8 @@ class FeedingsController < ApplicationController
       @feeder_url = ENV['FEEDER_URL']
       @feeder_private_key = ENV['FEEDER_PRIVATE_KEY']
 
-      @feeder_create_nonces_url = @feeder_url + '/nonces/create'
-      @feeder_use_nonces_url = @feeder_url + '/nonces/use'
+      @feeder_create_nonces_url = @feeder_url + 'nonces/create'
+      @feeder_use_nonces_url = @feeder_url + 'nonces/use'
 
       # get nonce from feeder
       @unsigned_nonce = Net::HTTP.get_response(URI.parse(@feeder_create_nonces_url)).body
