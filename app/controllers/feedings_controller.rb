@@ -20,4 +20,17 @@ class FeedingsController < ApplicationController
       end
     end
   end
+
+  def test_feeder # for testing; todo: remove
+    render :text => activate_feeder
+  end
+
+  private
+
+    def activate_feeder
+      # get environment variables
+      # get nonce from feeder
+      # sign nonce
+      # post nonce back to feeder
+    end
 end
